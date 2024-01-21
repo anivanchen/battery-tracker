@@ -4,7 +4,7 @@ Python script for battery data tracking at competitions.
 
 ## Installation
 
-1. Install Python 3.7 or higher
+1. Install Python 3.10 or higher
 2. Install pip
 3. Install dependencies with `pip install -r requirements.txt`
 
