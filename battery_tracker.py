@@ -10,15 +10,20 @@ def main():
 
     matches = []
     batteries = []
+    next_battery = 0
 
     with open('battery_data.csv', 'r') as csvfile:
         reader = csv.reader(csvfile)
+        counter = 0
         for row in reader:
+            if counter == 0:
+                counter += 1
+                continue
             matches.append(row[0].split('_')[-1])
             batteries.append(row[1])
 
-    print(batteries[len(batteries) - 1])
-    next_battery = int(batteries[len(batteries) - 1]) + 1
+    if len(batteries) != 0:
+        next_battery = int(batteries[len(batteries) - 1]) + 1
 
     with open('config.json', 'r') as configfile:
         config = json.load(configfile)
